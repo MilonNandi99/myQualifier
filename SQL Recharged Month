@@ -1,9 +1,0 @@
-//Recharged Month*******************************************
-
-
-select customer_name,email_id,monthname(recharge_date) as "RECHARGE_MONTH"
-from customer c join subscription s 
-on c.phone_number=s.phone_number 
-where expiry_date in 
-(select min(expiry_date) from subscription)
-order by customer_name;
